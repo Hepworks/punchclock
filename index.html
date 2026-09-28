@@ -1990,7 +1990,7 @@ body.theme-stamp .date-shift-btn{
     async get(key){ const raw = ls.get(LS_PREFIX+key); return raw===null ? null : { key, value: raw, shared:false }; },
     async set(key, value){
       if(!ls.set(LS_PREFIX+key, value)) return null;
-      if(key===DATA_KEY){ localVersion++; ls.set(DIRTY_KEY,'1'); schedule(8000); scheduleBackup(5000); }
+      if(key===DATA_KEY){ localVersion++; ls.set(DIRTY_KEY,'1'); schedule(400); scheduleBackup(5000); }
       return { key, value, shared:false };
     },
     async delete(key){ const had = ls.get(LS_PREFIX+key)!==null; ls.del(LS_PREFIX+key); return had ? { key, deleted:true, shared:false } : null; },
