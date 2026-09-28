@@ -1067,6 +1067,20 @@ body.theme-stamp .footer-note{
 body.theme-stamp .reset-link{
   color:#ffb3ac;
 }
+.danger-zone{
+  text-align:center;margin-top:10px;
+}
+.danger-zone summary{
+  display:inline-block;
+  font-size:11px;color:#7a725c;letter-spacing:.05em;
+  cursor:pointer;list-style:none;
+}
+.danger-zone summary::-webkit-details-marker{display:none;}
+.danger-zone summary::before{content:'Advanced \25b8';}
+.danger-zone[open] summary::before{content:'Advanced \25be';}
+body.theme-stamp .danger-zone summary{
+  color:#e4e6e7;text-shadow:0 1px 1px rgba(0,0,0,.4);
+}
 .yt-link{
   color:var(--brass);
   text-decoration:underline;
@@ -1700,8 +1714,11 @@ body.theme-stamp .date-shift-btn{
 
   </div>
 
-  <p class="footer-note">Saved automatically to your account.<button class="reset-link" id="resetBtn">Clear all data</button></p>
+  <p class="footer-note">Saved automatically to your account.</p>
   <p class="footer-note"><a class="yt-link" href="https://www.youtube.com/@Hepworks?sub_confirmation=1" target="_blank" rel="noopener noreferrer">Subscribe on YouTube -&gt;</a></p>
+  <details class="danger-zone"><summary>Advanced</summary>
+    <p class="footer-note"><button class="reset-link" id="resetBtn">Clear all data</button></p>
+  </details>
 </div>
 
 <div class="ctx-menu" id="ctxMenu"></div>
